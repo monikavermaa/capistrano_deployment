@@ -1,0 +1,18 @@
+<%= form_with(model: @employee, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: 'form-control', placeholder: 'Enter employee name' %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.email_field :email, class: 'form-control', placeholder: 'Enter employee email' %>
+    </div>
+  
+    <!-- Add more fields as needed -->
+  
+    <div class="actions">
+      <%= form.submit 'Create Employee', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  
