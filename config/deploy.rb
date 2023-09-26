@@ -12,7 +12,7 @@ set :branch, 'master'
 
 # Define the directory where your application will be deployed
 #set :deploy_to, '/var/www/your-app-name'
-set :deploy_to, '/var/www/my-rails-project'
+set :deploy_to, 'home/ubuntu/var/www/my-rails-project'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

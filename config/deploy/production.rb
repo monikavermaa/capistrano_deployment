@@ -67,4 +67,4 @@ set :repo_url, 'https://github.com/monikavermaa/demo_taskcraft_app.git'
 set :branch, 'master'
 
 # Define the directory where your application will be deployed
-set :deploy_to, '/var/www/taskcraft'
+set :deploy_to, 'home/ubuntu/var/www/my-rails-project'
