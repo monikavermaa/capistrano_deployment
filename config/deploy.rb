@@ -24,7 +24,7 @@ set :puma_init_active_record, false  # Change to false when not using ActiveReco
 set :bundle_flags, '--deployment'
 # set :sidekiq_config, -> { File.join(shared_path, 'config', 'sidekiq.yml') }
 # set :sidekiq_config, "#{current_path}/config/sidekiq.yml"
-​
+
 ## Defaults:
 # set :scm,           :git
 set :branch,        :staging
@@ -35,7 +35,7 @@ set :branch,        :staging
 # set :linked_files, %w{.env}
 # set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 append :linked_dirs,  "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "bundle"
-​
+
 namespace :deploy do
   desc "Make sure local git is in sync with remote."
   task :check_revision do
@@ -47,7 +47,7 @@ namespace :deploy do
       end
     end
   end
-​
+
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
@@ -55,14 +55,14 @@ namespace :deploy do
       invoke 'deploy'
     end
   end
-​
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       invoke 'puma:restart'
     end
   end
-​
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
