@@ -4,7 +4,7 @@ lock "~> 3.17.3"
 set :application, "my_app_name"
 
 # Define your server's IP or hostname, SSH user, and SSH key
-server '3-7-45-234', user: 'ubuntu', roles: %w{app db web}
+server 'ec2-3-7-45-234.ap-south-1.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}
 
 # Specify your application's repository URL and branch
 set :repo_url, 'https://github.com/monikavermaa/demo_taskcraft_app.git'

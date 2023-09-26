@@ -7,8 +7,6 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-
-
 # role-based syntax
 # ==================
 
@@ -59,3 +57,14 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+# config/deploy/production.rb
+
+# Define your server's IP or hostname, SSH user, and roles
+server 'ec2-3-7-45-234.compute-1.amazonaws.com', user: 'ubuntu', roles: %w{app db web}
+
+# Specify your application's repository URL and branch
+set :repo_url, 'https://github.com/monikavermaa/demo_taskcraft_app.git'
+set :branch, 'master'
+
+# Define the directory where your application will be deployed
+set :deploy_to, '/var/www/taskcraft'
