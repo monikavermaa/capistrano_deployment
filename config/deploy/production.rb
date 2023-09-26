@@ -60,7 +60,7 @@
 # config/deploy/production.rb
 
 # Define your server's IP or hostname, SSH user, and roles
-server 'ec2-3-7-45-234.compute-1.amazonaws.com', user: 'ubuntu', roles: %w{app db web}
+server '3.7.45.234', user: 'ubuntu', roles: %w{app db web}
 
 # Specify your application's repository URL and branch
 set :repo_url, 'https://github.com/monikavermaa/demo_taskcraft_app.git'
