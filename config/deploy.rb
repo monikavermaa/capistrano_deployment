@@ -10,7 +10,7 @@ set :rvm_ruby_string, '2.5.3@eduparc' # you probably have this already
 set :deploy_via,      :remote_cache
 
 #set :deploy_to, 'home/ubuntu/var/www/my-rails-project'
-set :deploy_to, '/var/www/my-rails-project/#{fetch(:application)}'
+set :deploy_to, "/var/www/my-rails-project/#{fetch(:application)}"
 # set :deploy_to,       "/var/deploy/#{fetch(:application)}"
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
