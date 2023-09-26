@@ -1,12 +1,12 @@
 set :repo_url, 'https://github.com/monikavermaa/demo_taskcraft_app.git'
-set :application,     'EduParc'
-set :user,            'ec2-user'
+set :application,     'Demo'
+set :user,            'ubuntu'
 set :puma_threads,    [4, 16]
 set :puma_workers,    6
 # Don't change these unless you know what you're doing
 set :pty,             false
 set :use_sudo,        false
-set :rvm_ruby_string, '2.5.3@eduparc' # you probably have this already
+set :rvm_ruby_string, '2.6.3@demo' # you probably have this already
 set :deploy_via,      :remote_cache
 
 #set :deploy_to, 'home/ubuntu/var/www/my-rails-project'
@@ -29,7 +29,7 @@ set :bundle_flags, '--deployment'
 
 ## Defaults:
 # set :scm,           :git
-set :branch,        :staging
+set :branch,        :production
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5
