@@ -33,8 +33,8 @@ set :bundle_flags, '--deployment'
 ## Defaults:
 # set :scm,           :git
 set :branch,        :master
-# append :linked_dirs,  "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "bundle"
-append :linked_dirs,  "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "bundle", "node_modules"
+append :linked_dirs,  "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "bundle"
+#append :linked_dirs,  "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "bundle", "node_modules"
 
 namespace :deploy do
   desc "Make sure local git is in sync with remote."
