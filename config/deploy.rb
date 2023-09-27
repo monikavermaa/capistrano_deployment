@@ -1,6 +1,6 @@
 set :repo_url, 'git@github.com:monikavermaa/demo_taskcraft_app.git'
 set :application,     'Demo'
-set :user,            'ubuntu'
+set :user,            'root'
 set :puma_threads,    [4, 16]
 set :puma_workers,    6
 # Don't change these unless you know what you're doing
