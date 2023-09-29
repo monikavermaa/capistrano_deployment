@@ -18,14 +18,14 @@ threads min_threads_count, max_threads_count
 # by Capistrano - `/home/ubuntu/var/www/my-rails-project/my_app/shared`
 
 # Set up socket location
-bind "unix:///home/ubuntu/var/www/my-rails-project/Demo/shared/tmp/sockets/puma.sock"
+bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
 
 # Logging
-stdout_redirect "/home/ubuntu/var/www/my-rails-project/Demo/shared/log/puma.stdout.log", "/home/ubuntu/var/www/my-rails-project/Demo/shared/log/puma.stderr.log", true
+stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
 
 # Set master PID and state locations
-pidfile "/home/ubuntu/var/www/my-rails-project/Demo/shared/tmp/pids/puma.pid"
-state_path "/home/ubuntu/var/www/my-rails-project/Demo/shared/tmp/pids/puma.state"
+pidfile "#{shared_dir}/tmp/pids/puma.pid"
+state_path "#{shared_dir}/tmp/pids/puma.state"
 activate_control_app
 
 worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
