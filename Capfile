@@ -6,12 +6,17 @@ require 'capistrano/rails'
 # require 'capistrano/rails/migrations'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
-require 'capistrano/puma'
-install_plugin Capistrano::Puma
-require 'capistrano/puma/workers'
-require 'capistrano/puma/nginx'
-install_plugin Capistrano::Puma::Nginx
+# require 'capistrano/puma'
 require 'capistrano/rails/assets'
+require 'capistrano/puma'
+require 'capistrano/puma/nginx'
+install_plugin Capistrano::Puma
+install_plugin Capistrano::Puma::Nginx
+
+# install_plugin Capistrano::Puma
+#require 'capistrano/puma/workers'
+# require 'capistrano/puma/nginx'
+# install_plugin Capistrano::Puma::Nginx
 #set :whenever_command, "bundle exec whenever"
 #require "whenever/capistrano"
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
