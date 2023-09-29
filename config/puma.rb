@@ -11,6 +11,23 @@ threads min_threads_count, max_threads_count
 # Specifies the `worker_timeout` threshold that Puma will use to wait before
 # terminating a worker in development environments.
 #
+
+# config/puma.rb
+
+# `shared_dir` is the symlinked `shared/` directory created
+# by Capistrano - `/home/ubuntu/var/www/my-rails-project/my_app/shared`
+
+# Set up socket location
+bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
+
+# Logging
+stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
+
+# Set master PID and state locations
+pidfile "#{shared_dir}/tmp/pids/puma.pid"
+state_path "#{shared_dir}/tmp/pids/puma.state"
+activate_control_app
+
 worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
