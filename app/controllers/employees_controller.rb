@@ -6,9 +6,7 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.all
-    render json: { employee: @employees }
     render json: { my_test_deploy_employee: @employees }
-
   end  
 
   def create
